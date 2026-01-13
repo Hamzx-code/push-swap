@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:00:36 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/13 20:26:16 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/13 21:19:40 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_check_flag(char *flag)
 	return (0);
 }
 
-/*int	ft_check_input(int ac, char **av)
+int	ft_check_input(int ac, char **av)
 {
 	if (ac > 1 && av[1][0] == '-' && av[1][1] == '-')
 	{
@@ -67,8 +67,8 @@ int	ft_check_flag(char *flag)
 			return (1);
 		}
 	}
-}*/
-#include <stdio.h>
+}
+/*#include <stdio.h>
 int	main(void)
 {
 	printf("--simple : %d\n", ft_check_flag("--simple"));
@@ -79,4 +79,4 @@ int	main(void)
 	printf("0000 : %d\n", ft_check_flag("0000"));
 	printf("test : %d\n", ft_check_flag("test"));
 	return (0);
-}
+}*/
