@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:43:50 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/13 16:42:42 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/13 17:28:27 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		sa(t_node **stack);
 int		sb(t_node **stack);
 int		ss(t_node **stack_a, t_node **stack_b);
 int		pa(t_node **stack_a, t_node **stack_b);
+int		pb(t_node **stack_b, t_node **stack_a);
 
 #endif

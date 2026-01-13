@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:33:20 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/13 16:42:06 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/13 17:27:07 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,31 @@ int	ss(t_node **stack_a, t_node **stack_b)
 	return (result_a && result_b);
 }
 
-int	pa()
+int	pa(t_node **stack_a, t_node **stack_b)
+{
+	t_node	*tmp_a;
+
+	if (!*stack_b)
+		return (0);
+	tmp_a = *stack_a;
+	*stack_a = *stack_b;
+	*stack_b = (*stack_b)->next;
+	(*stack_a)->next = tmp_a;
+	return (1);
+}
+
+int	pb(t_node **stack_b, t_node **stack_a)
+{
+	t_node	*tmp_a;
+
+	if (!*stack_a)
+		return (0);
+	tmp_a = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = (*stack_a)->next;
+	(*stack_b)->next = tmp_a;
+	return (1);
+}
 
 int	main(void)
 {
