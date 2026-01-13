@@ -6,11 +6,17 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:12:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/13 18:26:09 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/13 18:50:37 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
+
+void init_stack(t_stack *s)
+{
+    s->top = NULL;
+    s->size = 0;
+}
 
 t_node *new_node(int value)
 {
@@ -48,26 +54,48 @@ int	push(t_stack *s, int value)
 		// definir le top
 		s->top = n;
 	}
-	s-;
+	(s->size)++;
 }
 
-int	pop(t_node **stack)
+int	pop(t_stack *s)
 {
 	t_node *tmp;
+	t_node *last;
 	int		value;
 	
-	if (!*stack)
+	if (!s->top)
 		return (0);
-	tmp = *stack;
+	tmp = s->top;
 	value = tmp->value;
-	*stack = tmp->next;
+	if (s->size == 1)
+		s->top = NULL;
+	else
+	{
+		last = tmp->prev;
+		s->top = tmp->next;
+		last->next = s->top;
+		(s->top)->prev = last;
+	}
 	free(tmp);
+	(s->size)--;
 	return (value);
 }
 
-int	peek(t_node *stack)
+int	peek(t_stack *stack)
 {
-	if (!stack)
+	if (!stack->top)
 		return (0);
-	return (stack->value);
+	return ((stack->top)->value);
+}
+
+void	rotate(t_stack *s)
+{
+	if (s->size > 1)
+		s->top = s->top->next;
+}
+
+void	reverse_rotate(t_stack *s)
+{
+	if (s->size > 1)
+		s->top = s->top->prev;
 }
