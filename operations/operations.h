@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:43:50 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/13 18:02:18 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/14 00:59:04 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-typedef struct s_node
+/* typedef struct s_node
 {
 	int				value;
 	struct s_node	*next;
-}	t_node;
+}	t_node; */
 
 typedef struct s_node
 {
