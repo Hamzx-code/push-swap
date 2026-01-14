@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:00:36 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/14 18:32:19 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/14 18:44:47 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 		i++;
 	}
 	return (s1[i] - s2[i]);
-}
+}/
 
 int	ft_check_valid_flag(char *flag)
 {
@@ -103,9 +103,9 @@ int	ft_check_flag(int ac, char **av)
 	return (1);
 }
 //test
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	printf("flag = %s: %d\n", av[1], ft_check_flag(ac, av));
-	return (0);
-}
+//#include <stdio.h>
+//int	main(int ac, char **av)
+//{
+//	printf("flag = %s: %d\n", av[1], ft_check_flag(ac, av));
+//	return (0);
+//}
