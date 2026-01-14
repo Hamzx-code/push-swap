@@ -1,25 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oprations.h                                        :+:      :+:    :+:   */
+/*   operations3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/12 19:43:50 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/12 19:48:46 by mkacemi          ###   ########.fr       */
+/*   Created: 2026/01/14 19:02:49 by mkacemi           #+#    #+#             */
+/*   Updated: 2026/01/14 19:06:09 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATIONS_H
-# define OPERATIONS_H
+#include "operations.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-
-typedef struct s_node
+void	ra(t_stack *a)
 {
-	int				value;
-	struct s_node	*next;
-}	t_node;
+	if (a->size > 1)
+		a->top = a->top->next;
+}
 
-#endif
+void	rb(t_stack *b)
+{
+	if (b->size > 1)
+		b->top = b->top->next;
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	ra(a);
+	rb(b);
+}
+
+void	rra(t_stack *a)
+{
+	if (a->size > 1)
+		a->top = a->top->prev;
+}
+
+void	rrb(t_stack *b)
+{
+	if (b->size > 1)
+		b->top = b->top->prev;
+}
+
+void	rrr(t_stack *a, t_stack *b)
+{
+	rra(a);
+	rrb(b);
+}

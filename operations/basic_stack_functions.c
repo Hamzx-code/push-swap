@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:12:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/13 18:50:37 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/14 19:02:11 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,4 @@ int	peek(t_stack *stack)
 	if (!stack->top)
 		return (0);
 	return ((stack->top)->value);
-}
-
-void	rotate(t_stack *s)
-{
-	if (s->size > 1)
-		s->top = s->top->next;
-}
-
-void	reverse_rotate(t_stack *s)
-{
-	if (s->size > 1)
-		s->top = s->top->prev;
 }

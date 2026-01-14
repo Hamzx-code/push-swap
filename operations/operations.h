@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:43:50 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/14 00:59:04 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/14 18:44:49 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ t_node *new_node(int value);
 void	push(t_node **stack, int value);
 int		pop(t_node **stack);
 int		peek(t_node *stack);
-int		sa(t_node **stack);
-int		sb(t_node **stack);
-int		ss(t_node **stack_a, t_node **stack_b);
-int		pa(t_node **stack_a, t_node **stack_b);
+int		sa(t_stack *stack_a);
+int		sb(t_stack *stack_b);
+int		ss(t_stack *stack_a, t_stack *stack_b);
+int		pa(t_stack *a, t_stack *b);
 int		pb(t_node **stack_b, t_node **stack_a);
 
 #endif
