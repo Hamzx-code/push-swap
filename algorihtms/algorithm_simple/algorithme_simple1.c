@@ -6,74 +6,68 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 22:11:00 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/16 00:32:40 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/16 16:14:20 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stack/stack.h"
-#include "../operations/operations.h"
+#include "algorithme_simple.h"
 
-int cost(int index, int size)
+static int	use_ra(t_stack *a, t_stack *b, int value)
 {
-    if (index <= size / 2)
-        return index;
+	while ((a->top)->value != value)
+	{
+		write(1, "ra\n", 3);
+		if (ra(a) == 0)
+			return (0);
+	}
+	write(1, "pb\n", 3);
+	if (pb(b, a) == 0)
+		return (0);
+	return (1);
+}
+
+static int	use_rra(t_stack *a, t_stack *b, int value)
+{
+	while ((a->top)->value != value)
+	{
+		write(1, "rra\n", 3);
+        if(rra(a) == 0)
+		    return (0);
+	}
+	write(1, "pb\n", 3);
+    if (pb(b, a) == 0)
+		return (0);
+	return (1);
+}
+
+static int	mov_to_b(t_stack *a, t_stack *b, int min, int max)
+{
+	int cost_min;
+    int cost_max;
+	int pos_min;
+	int pos_max;
+
+	pos_min = position(min, a);
+	pos_max = position(max, a);
+	cost_min = cost(pos_min, a->size);
+    cost_max = cost(pos_max, a->size);
+	if (cost_min <= cost_max)
+    {
+		if (pos_min <= (a->size / 2 + 1))
+			use_ra(a, b, min);
+		else
+			use_rra(a, b, min);
+	}
     else
-        return size - index;
-}
-
-int valeur_min(t_stack *stack)
-{
-    int     min;
-    int     i;
-    t_node  *current;
-
-    i = 1;
-    current = stack->top;
-    min = current->value;
-    while (i <= stack->size)
-    {
-        if (current->value < min)
-            min = current->value;
-        current = current->next;
-        i++;
+	{
+    	if (pos_max <= (a->size / 2 + 1))
+			if (use_ra(a, b, max))
+				return (0);
+		else
+			if (use_rra(a, b, max) == 0)
+				return (0);
     }
-    return (min);
-}
-
-int valeur_max(t_stack *stack)
-{
-    int     max;
-    int     i;
-    t_node  *current;
-
-    i = 1;
-    current = stack->top;
-    max = current->value;
-    while (i <= stack->size)
-    {
-        if (current->value > max)
-            max = current->value;
-        current = current->next;
-        i++;
-    }
-    return (max);
-}
-
-int position(int value, t_stack *stack)
-{
-    int     i;
-    t_node  *current;
-
-    i = 1;
-    current = stack->top;
-    while (i <= stack->size)
-    {
-        if (current->value == value)
-            return (i);
-        current = current->next;
-        i++;
-    }
-    return (-1);
+	return (1);
 }
 
 // Simple min/max extraction methods
@@ -81,39 +75,13 @@ int algorithme_simple(t_stack *a, t_stack *b)
 {
     int min;
     int max;
-    int cost_min;
-    int cost_max;
 
     while (a->top != NULL)
     {
         min = valeur_min(a);
         max = valeur_max(a);
-        cost_min = cost(position(min, a), a->size);
-        cost_max = cost(position(max, a), a->size);
-        if (cost_min <= cost_max)
-        {
-            while ((a->top)->value != min)
-            {
-                write(1, "ra\n", 3);
-                if(ra(a) == 0)
-                    return (0);
-            }
-            write(1, "pb\n", 3);
-            if (pb(b, a) == 0)
-                return (0);
-        }
-        else
-        {
-            while ((a->top)->value != max)
-            {
-                write(1, "ra\n", 3);
-                if(ra(a) == 0)
-                    return (0);
-            }
-            write(1, "pb\n", 3);
-            if (pb(b, a) == 0)
-                return (0);
-        }
+        if (move_to_b(a, b, min, max) == 0)
+			return (0);
     }
     while (b->top != NULL)
     {

@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 19:02:49 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/16 14:58:30 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/16 15:28:41 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void	rrb(t_stack *b)
 
 void	rrr(t_stack *a, t_stack *b)
 {
-	rra(a);
 	rrb(b);
+	rra(a);
 }
