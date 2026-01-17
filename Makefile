@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/16 19:08:32 by mkacemi          ###   ########.fr        #
+#    Updated: 2026/01/16 19:09:41 by mkacemi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,6 @@ test: $(NAME)
 git:
 	git add .
 	git commit -m "$(msg)"
-
+	git push
 # Phony targets
 .PHONY: all clean fclean re test

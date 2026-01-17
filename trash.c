@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:45:53 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/14 18:46:45 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/17 17:13:35 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,30 @@ int	sa(t_node **stack_a)
 	printf("after poping sa %d \n", peek(stack));
 	free(stack);
 }*/
+
+// static void	mov_to_b(t_stack *a, t_stack *b, int min, int max)
+// {
+// 	int cost_min;
+//     int cost_max;
+// 	int pos_min;
+// 	int pos_max;
+
+// 	pos_min = position(min, a);
+// 	pos_max = position(max, a);
+// 	cost_min = cost(pos_min, a->size);
+//     cost_max = cost(pos_max, a->size);
+// 	if (cost_min <= cost_max)
+//     {
+// 		if (pos_min <= (a->size / 2 + 1))
+// 			use_ra(a, b, min);
+// 		else
+// 			use_rra(a, b, min);
+// 	}
+//     else
+// 	{
+//     	if (pos_max <= (a->size / 2 + 1))
+// 			use_ra(a, b, max );
+// 		else
+// 			use_rra(a, b, max);
+//     }
+// }
