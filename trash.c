@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:45:53 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/14 18:46:45 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/17 17:53:08 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,113 @@ int	sa(t_node **stack_a)
 	printf("after poping sa %d \n", peek(stack));
 	free(stack);
 }*/
+
+// static void	mov_to_b(t_stack *a, t_stack *b, int min, int max)
+// {
+// 	int cost_min;
+//     int cost_max;
+// 	int pos_min;
+// 	int pos_max;
+
+// 	pos_min = position(min, a);
+// 	pos_max = position(max, a);
+// 	cost_min = cost(pos_min, a->size);
+//     cost_max = cost(pos_max, a->size);
+// 	if (cost_min <= cost_max)
+//     {
+// 		if (pos_min <= (a->size / 2 + 1))
+// 			use_ra(a, b, min);
+// 		else
+// 			use_rra(a, b, min);
+// 	}
+//     else
+// 	{
+//     	if (pos_max <= (a->size / 2 + 1))
+// 			use_ra(a, b, max );
+// 		else
+// 			use_rra(a, b, max);
+//     }
+// }
+
+
+// void	changing_top(t_stack *a, t_stack *b)
+// {
+// 	t_node	*last_a;
+
+// 	if (!a->top)
+// 	{
+// 		a->top = b->top;
+// 		(a->top)->next = a->top;
+// 		(a->top)->prev = a->top;
+// 	}
+// 	else
+// 	{
+// 		last_a = (a->top)->prev;  // Sauvegarder le dernier de a
+		
+// 		// Insérer b->top au sommet de a
+// 		b->top->next = a->top;
+// 		b->top->prev = last_a;
+// 		last_a->next = b->top;
+// 		a->top->prev = b->top;
+		
+// 		a->top = b->top;  // Mettre à jour le top
+// 	}
+// }
+
+// int	pa(t_stack *a, t_stack *b)
+// {
+// 	t_node	*tmp;
+
+// 	if (!b->top)
+// 		return (0);
+// 	changing_top(a, b);
+// 	if (b->size < 2)
+// 		b->top = NULL;
+// 	else
+// 	{
+// 		tmp = b->top;
+// 		b->top = (b->top->next);
+// 		(b->top)->prev = tmp->prev;
+// 		(tmp->prev)->next = b->top;
+// 		if (b->size == 2)
+// 		{
+// 			(b->top)->next = b->top;
+// 			(b->top)->prev = b->top;
+// 		}
+// 	}
+// 	(a->size)++;
+// 	(b->size)--;
+// 	return (1);
+// }
+
+// int	pb(t_stack *b, t_stack *a)
+// {
+// 	t_node	*tmp;
+
+// 	if (!a->top)
+// 		return (0);
+// 	changing_top(b, a);
+// 	if (a->size < 2)
+// 		a->top = NULL;
+// 	else
+// 	{
+// 		tmp = a->top;
+// 		a->top = (a->top->next);
+// 		(a->top)->prev = tmp->prev;
+// 		(tmp->prev)->next = a->top;
+// 		if (a->size == 2)
+// 		{
+// 			(a->top)->next = a->top;
+// 			(a->top)->prev = a->top;
+// 		}
+// 	}
+// 	(b->size)++;
+// 	(a->size)--;
+// 	return (1);
+// }
+
+/* typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+}	t_node; */

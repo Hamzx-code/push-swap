@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 19:02:49 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/17 17:46:31 by mkacemi          ###   ########.fr       */
+/*   Created: 2026/01/16 18:28:47 by mkacemi           #+#    #+#             */
+/*   Updated: 2026/01/16 18:44:18 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#ifndef MAIN_H
+# define MAIN_H
 
-void	ra(t_stack *a)
-{
-	write(1, "ra\n", 3);
-	if (a->size > 1)
-		a->top = a->top->next;
-}
+# include "algorithms/algorithm_simple/algorithme_simple.h"
+# include "operations/operations.h"
+# include "stack/stack.h"
 
-void	rb(t_stack *b)
-{
-	write(1, "rb\n", 3);
-	if (b->size > 1)
-		b->top = b->top->next;
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	write(1, "rr\n", 3);
-	ra(a);
-	rb(b);
-}
+#endif

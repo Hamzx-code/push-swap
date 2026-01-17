@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations3.c                                      :+:      :+:    :+:   */
+/*   algorithme_simple.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/14 19:02:49 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/17 17:46:31 by mkacemi          ###   ########.fr       */
+/*   Created: 2026/01/16 16:08:32 by mkacemi           #+#    #+#             */
+/*   Updated: 2026/01/17 17:39:55 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#ifndef ALGORITHME_SIMPLE_H
+# define ALGORITHME_SIMPLE_H
 
-void	ra(t_stack *a)
-{
-	write(1, "ra\n", 3);
-	if (a->size > 1)
-		a->top = a->top->next;
-}
+# include "../../stack/stack.h"
+# include "../../operations/operations.h"
 
-void	rb(t_stack *b)
-{
-	write(1, "rb\n", 3);
-	if (b->size > 1)
-		b->top = b->top->next;
-}
+int		cost(int index, int size);
+int		valeur_min(t_stack *stack);
+int		valeur_max(t_stack	*stack);
+int		position(int value, t_stack *stack);
+void	algorithme_simple(t_stack *a, t_stack *b);
 
-void	rr(t_stack *a, t_stack *b)
-{
-	write(1, "rr\n", 3);
-	ra(a);
-	rb(b);
-}
+#endif
