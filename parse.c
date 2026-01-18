@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 20:00:11 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/15 18:49:04 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/18 13:49:45 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,7 +181,7 @@ char	*ft_strdup(const char *src)
 	dst[i] = '\0';
 	return (dst);
 }
-char	**ft_parse(int ac, char **av)
+char	**parse(int ac, char **av)
 {
 	char	**values;
 	char	*elements;

@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:17:19 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/16 20:10:51 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/18 13:49:46 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_check_char(char *value)
+int	check_char(char *value)
 {
 	int	i;
 
@@ -61,14 +61,14 @@ int	ft_check_char(char *value)
 	return (1);
 }
 
-int	ft_check_limits(long number)
+int	check_limits(long number)
 {
 	if (value < INT_MIN || value_long > INT_MAX)
 		return (0);
 	return (1);
 }
 
-int	ft_check_duplicate(int	*numbers)
+int	check_duplicate(int	*numbers)
 {
 	size_t	i;
 	size_t	j;
@@ -90,7 +90,7 @@ int	ft_check_duplicate(int	*numbers)
 	return (1);
 }
 
-int	ft_check_values(char **values, int start, int *numbers_array)
+int	check_values(char **values, int start, int *numbers_array)
 {
 	size_t	i;
 	long	value_long;
@@ -98,15 +98,15 @@ int	ft_check_values(char **values, int start, int *numbers_array)
 	i = start;
 	while (values[i])
 	{
-		if (!ft_check_char(values[i]))
+		if (!check_char(values[i]))
 			return (0);
 		value_long = ft_atol(values[i]);
-		if (!ft_check_limits(value_long))
+		if (!check_limits(value_long))
 			return (0);
 		*numbers_array[i - start] = (int)value_long;
 		i++;
 	}
-	if (!ft_check_duplicate(numbers_array))
+	if (!check_duplicate(numbers_array))
 		return (0);
 	return (1);
 }
