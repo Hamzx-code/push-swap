@@ -6,10 +6,11 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:00:36 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/18 13:49:32 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/19 19:40:49 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stddef.h>
 #include <unistd.h>
 
@@ -82,20 +83,20 @@ int	check_second_flag(char *first_flag, char *second_flag)
 	return (0);
 }
 
-int	check_flag(int ac, char **av, int *flag_count)
+int	check_flag(int ac, char **values, int *flag_count)
 {
 	int	nb_flags;
 
 	nb_flags = 0;
-	if (ac >= 2 && av[1][0] == '-' && av[1][1] == '-')
+	if (ac >= 2 && values[0][0] == '-' && values[0][1] == '-')
 	{
-		if (!check_valid_flag(av[1]))
+		if (!check_valid_flag(values[0]))
 			return (0);
 		nb_flags++;
 	}	
-	if (ac >= 3  && av[2][0] == '-' && av[2][1] == '-')
+	if (ac >= 3  && values[1][0] == '-' && values[1][1] == '-')
 	{
-		if (!check_second_flag(av[1], av[2]))
+		if (!check_second_flag(values[0], values[1]))
 			return (0);
 		nb_flags++;
 	}
@@ -103,10 +104,10 @@ int	check_flag(int ac, char **av, int *flag_count)
 	return (1);
 }
 //test
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	int	flag_count = 0;
-	printf("flag = %s: %d\n", av[1], check_flag(ac, av, &flag_count));
-	return (0);
-}
+//#include <stdio.h>
+//int	main(int ac, char **av)
+//{
+//	int	flag_count = 0;
+//	printf("flag = %s: %d\n", av[1], check_flag(ac, av, &flag_count));
+//	return (0);
+//}

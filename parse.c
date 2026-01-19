@@ -6,10 +6,11 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 20:00:11 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/18 13:49:45 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/19 20:33:02 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stdlib.h>
 #include <stddef.h>
 
@@ -23,15 +24,6 @@
 //ft_split
 
 
-size_t  ft_strlen(const char *s)
-{
-	size_t  len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	return (len);
-}
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
@@ -181,14 +173,30 @@ char	*ft_strdup(const char *src)
 	dst[i] = '\0';
 	return (dst);
 }
+static int check_valid_args(int ac, char **av)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (!av[i] || !av[i][0])
+		{
+			ft_putstr_fd("Error\n", 2);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
 char	**parse(int ac, char **av)
 {
 	char	**values;
 	char	*elements;
 	char	*tmp;
-	size_t	i;
+	int	i;
 
-	if (ac < 2)
+	if (ac < 2 || !check_valid_args(ac, av))
 		return (NULL);
 	elements = ft_strdup(av[1]);
 	if (!elements)

@@ -6,12 +6,20 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:17:19 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/18 13:49:46 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/19 20:36:17 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <stddef.h>
 #include <limits.h>
+
+static long	ft_atol_overflow(int sign)
+{
+	if (sign == 1)
+		return (LONG_MAX);
+	return (LONG_MIN);
+}
 
 long	ft_atol(const char *str)
 {
@@ -34,6 +42,8 @@ long	ft_atol(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (result > (LONG_MAX - (str[i] - '0')) / 10)
+			return(ft_atol_overflow(sign));
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
@@ -51,7 +61,11 @@ int	check_char(char *value)
 {
 	int	i;
 
+	if (!value[0])
+		return (0);
 	i = 0;
+	if (value[i] == '-' || value[i] == '+')
+		i++;
 	while (value[i])
 	{
 		if (!ft_isdigit(value[i]))
@@ -63,23 +77,23 @@ int	check_char(char *value)
 
 int	check_limits(long number)
 {
-	if (value < INT_MIN || value_long > INT_MAX)
+	if (number < INT_MIN || number > INT_MAX)
 		return (0);
 	return (1);
 }
 
-int	check_duplicate(int	*numbers)
+int	check_duplicate(int	*numbers, int size_array)
 {
-	size_t	i;
-	size_t	j;
-	size_t	size; 
+	int	i;
+	int	j;
+	int	size; 
 
 	i = 0;
-	size = sizeof(numbers) / sizeof(numbers[0]);
-	while (numbers[i] < (size - 1))
+	size = size_array;
+	while (i < (size - 1))
 	{
 		j = i + 1;
-		while (numbers[j] < size)
+		while (j < size)
 		{
 			if (numbers[i] == numbers[j])
 				return (0);
@@ -90,7 +104,7 @@ int	check_duplicate(int	*numbers)
 	return (1);
 }
 
-int	check_values(char **values, int start, int *numbers_array)
+int	check_values(char **values, int start, int **numbers_array, int size_array)
 {
 	size_t	i;
 	long	value_long;
@@ -103,10 +117,10 @@ int	check_values(char **values, int start, int *numbers_array)
 		value_long = ft_atol(values[i]);
 		if (!check_limits(value_long))
 			return (0);
-		*numbers_array[i - start] = (int)value_long;
+		(*numbers_array)[i - start] = (int)value_long;
 		i++;
 	}
-	if (!check_duplicate(numbers_array))
+	if (!check_duplicate(*numbers_array, size_array))
 		return (0);
 	return (1);
 }
