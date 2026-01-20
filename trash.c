@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:45:53 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/17 17:53:08 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/21 00:46:32 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,3 +166,12 @@ int	sa(t_node **stack_a)
 	int				value;
 	struct s_node	*next;
 }	t_node; */
+
+
+// min = valeur_min(a);
+// if (position(min, a) <= a->size / 2)
+// 	while ((a->top)->value != min)
+// 		ra(a);
+// else
+// 	while ((a->top)->value != min)
+// 		rra(a);
