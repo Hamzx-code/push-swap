@@ -6,13 +6,13 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 01:22:56 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/19 18:21:08 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/20 02:14:32 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithme_medium.h"
 
-int *stack_to_array(t_stack *a)
+static int *stack_to_array(t_stack *a)
 {
     int     *arr;
     t_node  *tmp;
@@ -32,7 +32,7 @@ int *stack_to_array(t_stack *a)
     return (arr);
 }
 
-void sort_array(int *arr, int size)
+static void sort_array(int *arr, int size)
 {
     int i;
     int j;
@@ -56,7 +56,7 @@ void sort_array(int *arr, int size)
     }
 }
 
-int get_index(int *arr, int size, int value)
+static int get_index(int *arr, int size, int value)
 {
     int i;
 
@@ -70,25 +70,22 @@ int get_index(int *arr, int size, int value)
     return (-1); // sécurité
 }
 
-void index_stack(t_stack *a)
+int *index_stack(t_stack *a)
 {
     int     *arr;
     t_node  *tmp;
 
     arr = stack_to_array(a);
     if (!arr)
-        return ;
-
+        return (0);
     sort_array(arr, a->size);
-
     tmp = a->top;
     while (tmp)
     {
         tmp->value = get_index(arr, a->size, tmp->value);
         tmp = tmp->next;
-        if (tmp == a->top) // SI TA LISTE EST CIRCULAIRE
+        if (tmp == a->top)
             break;
     }
-
-    free(arr);
+    return(arr);
 }
