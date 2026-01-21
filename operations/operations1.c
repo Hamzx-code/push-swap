@@ -6,17 +6,18 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 19:33:20 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/17 17:38:08 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/21 19:51:31 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-int	sa(t_stack *stack_a)
+int	sa(t_stack *stack_a, t_flage *flage)
 {
 	t_node	*ex_top;
 	t_node	*last;
 
+	(flage->sa)++;
 	write(1, "sa\n", 3);
 	if (!stack_a->top || stack_a->size < 2)
 		return (0);
@@ -32,11 +33,12 @@ int	sa(t_stack *stack_a)
 	return (1);
 }
 
-int	sb(t_stack *stack_b)
+int	sb(t_stack *stack_b, t_flage *flage)
 {
 	t_node	*ex_top;
 	t_node	*last;
 
+	(flage->sb)++;
 	write(1, "sb\n", 3);
 	if (!stack_b->top || stack_b->size < 2)
 		return (0);
@@ -52,13 +54,14 @@ int	sb(t_stack *stack_b)
 	return (1);
 }
 
-int	ss(t_stack *stack_a, t_stack *stack_b)
+int	ss(t_stack *stack_a, t_stack *stack_b, t_flage *flage)
 {
 	int	result_a;
 	int	result_b;
 
+	(flage->ss)++;
 	write(1, "ss\n", 3);
-	result_a = sa(stack_a);
-	result_b = sb(stack_b);
+	result_a = sa(stack_a, flage);
+	result_b = sb(stack_b, flage);
 	return (result_a && result_b);
 }

@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:06:22 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/21 18:57:39 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/21 19:45:01 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,12 @@ static double	count_disorder(t_stack *a)
 	return ((double)mistakes / (double)total_pairs);
 }
 
-int	adaptive(t_stack *a, t_stack *b)
+int	adaptive(t_stack *a, t_stack *b, t_flage *flag)
 {
 	double	disorder;
 
 	disorder = count_disorder(a);
+	flag->disorder = disorder;
 	if (disorder <= 0.2)
 		if (algorithme_simple(a, b) == 0)
 			return (0);

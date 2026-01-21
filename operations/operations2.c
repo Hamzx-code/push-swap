@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:39:03 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/17 17:44:50 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/21 19:52:22 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void	changing_top(t_stack *dest, t_node *node)
 	}
 }
 
-int	pb(t_stack *b, t_stack *a)
+int	pb(t_stack *b, t_stack *a, t_flage *flage)
 {
 	t_node	*node_to_move;
 
 	write(1, "pb\n", 3);
+	(flage->pb)++;
 	if (!a->top)
 		return (0);
 	node_to_move = a->top;
@@ -57,11 +58,12 @@ int	pb(t_stack *b, t_stack *a)
 	return (1);
 }
 
-int	pa(t_stack *a, t_stack *b)
+int	pa(t_stack *a, t_stack *b, t_flage *flage)
 {
 	t_node	*node_to_move;
 
 	write(1, "pa\n", 3);
+	(flage->pa)++;
 	if (!b->top)
 		return (0);
 	node_to_move = b->top;
