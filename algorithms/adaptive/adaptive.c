@@ -6,11 +6,24 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:06:22 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/21 19:45:01 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 00:42:17 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "adaptive.h"
+
+static void	copy_strategy(t_flage *flage, char *strategy)
+{
+	int	i;
+
+	i = 0;
+	while (i < 19 && strategy[i] != '\0')
+	{
+		flage->strategy[i] = strategy[i];
+		i++;
+	}
+	flage->strategy[i] = '\0';
+}
 
 static void	initialize(int *mistakes, int *total_pairs, t_node **i, t_stack *a)
 {
@@ -47,20 +60,29 @@ static double	count_disorder(t_stack *a)
 	return ((double)mistakes / (double)total_pairs);
 }
 
-int	adaptive(t_stack *a, t_stack *b, t_flage *flag)
+int	adaptive(t_stack *a, t_stack *b, t_flage *flage)
 {
 	double	disorder;
 
 	disorder = count_disorder(a);
-	flag->disorder = disorder;
+	flage->disorder = disorder;
 	if (disorder <= 0.2)
-		if (algorithme_simple(a, b) == 0)
+	{
+		if (algorithme_simple(a, b, flage) == 0)
 			return (0);
+		copy_strategy(flage, "O(n^2)");
+	}
 	else if (disorder < 0.5)
-		if (algorithme_medium(a, b) == 0)
+	{
+		if (algorithme_medium(a, b, flage) == 0)
 			return (0);
+		copy_strategy(flage, "(O(n √ n))");
+	}
 	else if (disorder >= 0.5)
-		if (algorithme_complexe(a, b) == 0)
+	{
+		if (algorithme_complexe(a, b, flage) == 0)
 			return (0);
+		copy_strategy(flage, "(O(n log n))");
+	}
 	return (1);
 }

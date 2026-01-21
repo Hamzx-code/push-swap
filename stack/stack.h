@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 21:27:24 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/21 19:57:18 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 00:47:08 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ int		push(t_stack *s, int value);
 int		pop(t_stack *s);
 int		peek(t_stack *s);
 int		is_sorted(t_stack *a);
+void	init_flage(t_flage *flage);
 
 #endif

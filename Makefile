@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/20 19:55:59 by mkacemi          ###   ########.fr        #
+#    Updated: 2026/01/22 00:46:08 by mkacemi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c \
+SRCS = main/main.c \
        stack/stack_utils1.c \
        stack/stack_utils2.c \
        operations/operations1.c \
@@ -24,6 +24,7 @@ SRCS = main.c \
        operations/operations3.c \
        operations/operations4.c \
        algorithms/algorithm_simple/algorithme_simple1.c \
+       algorithms/adaptive/adaptive.c \
        algorithms/algorithm_simple/utils.c \
        algorithms/algorithme_medium/algorithme_medium1.c \
        algorithms/algorithme_medium/utils1.c \
@@ -32,7 +33,7 @@ SRCS = main.c \
 
 OBJS = $(SRCS:.c=.o)
 
-HEADERS = main.h \
+HEADERS = main/main.h \
           stack/stack.h \
           operations/operations.h \
           algorithms/algorithm_simple/algorithme_simple.h \

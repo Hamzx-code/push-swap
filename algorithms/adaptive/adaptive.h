@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:07:28 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/21 18:58:01 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 00:04:01 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 # include "../algorithme_medium/algorithme_medium.h"
 # include "../algorithme_complexe/algorithme_complexe.h"
 
-int	adaptive(t_stack *a, t_stack *b);
+int	adaptive(t_stack *a, t_stack *b, t_flage *flage);
 
 #endif

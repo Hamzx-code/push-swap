@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   display_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/18 01:22:53 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 00:47:51 by mkacemi          ###   ########.fr       */
+/*   Created: 2026/01/22 00:53:29 by mkacemi           #+#    #+#             */
+/*   Updated: 2026/01/22 00:54:26 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "algorithme_medium.h"
-
-void	sort_small_stack(t_stack *a, t_flage *flage)
+void	ft_putnbr(int nb, int *count)
 {
-	if (a->size == 2)
-		sa(a, flage);
+	long int	n;
+
+	n = nb;
+	if (n < 0)
+	{
+		ft_putchar('-');
+		(*count)++;
+		n *= -1;
+	}
+	if (n >= 0 && n <= 9)
+	{
+		ft_putchar(n + '0');
+		(*count)++;
+	}
+	if (n > 9)
+	{
+		ft_putnbr(n / 10, count);
+		ft_putnbr(n % 10, count);
+	}
 }
 
-int	ft_sqrt(int nb)
+void	ft_putstr(char *str, int *count)
 {
 	int	i;
 
 	i = 0;
-	if (nb <= 0)
-		return (0);
-	while (i < nb)
+	while (str[i] != '\0')
 	{
-		if ((i * i) >= nb)
-			return (i);
+		write(1, &str[i], 1);
+		(*count)++;
 		i++;
 	}
-	return (0);
 }
