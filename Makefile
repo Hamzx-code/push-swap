@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/22 00:46:08 by mkacemi          ###   ########.fr        #
+#    Updated: 2026/01/22 01:57:37 by mkacemi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main/main.c \
+	   main/display_utils.c \
        stack/stack_utils1.c \
        stack/stack_utils2.c \
        operations/operations1.c \

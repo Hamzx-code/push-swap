@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 21:27:24 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 00:47:08 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 02:34:04 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct s_stack
 typedef struct s_flage
 {
 	double	disorder;
-	char	strategy[20];
-	int		totsl_ops;
+	char	strategy[30];
+	int		total_ops;
 	int		sa;
 	int		sb;
 	int		ss;

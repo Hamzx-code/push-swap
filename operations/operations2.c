@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 18:39:03 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/21 19:52:22 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 02:35:08 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	pb(t_stack *b, t_stack *a, t_flage *flage)
 
 	write(1, "pb\n", 3);
 	(flage->pb)++;
+	(flage->total_ops)++;
 	if (!a->top)
 		return (0);
 	node_to_move = a->top;
@@ -64,6 +65,7 @@ int	pa(t_stack *a, t_stack *b, t_flage *flage)
 
 	write(1, "pa\n", 3);
 	(flage->pa)++;
+	(flage->total_ops)++;
 	if (!b->top)
 		return (0);
 	node_to_move = b->top;

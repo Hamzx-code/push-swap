@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 16:39:20 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 00:16:03 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/22 02:36:16 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	init_flage(t_flage *flage)
 	int	i;
 
 	flage->disorder = 0.0;
-	flage->totsl_ops = 0;
+	flage->total_ops = 0;
 	flage->sa = 0;
 	flage->sb = 0;
 	flage->ss = 0;
