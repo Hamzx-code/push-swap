@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 18:28:47 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 02:10:54 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/23 02:09:10 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "../algorithms/algorithme_complexe/algorithme_complexe.h"
 # include "../operations/operations.h"
 # include "../stack/stack.h"
+# include "../parsing/parse.h"
 # include <stdio.h>
 
 void	display_bench(t_flage *flage);

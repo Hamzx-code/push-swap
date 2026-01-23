@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 18:52:41 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/22 19:47:41 by hhamidi          ###   ########lyon.fr   */
+/*   Updated: 2026/01/23 02:10:12 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing/parse.h"
 #include "stack/stack.h"
 
-int push_swap(int ac, char **av)
+int	push_swap(int ac, char **av)
 {
 	t_stack	stack;
 	t_data	data;
