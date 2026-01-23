@@ -6,14 +6,14 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 17:26:41 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/23 02:15:51 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/23 15:37:44 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSE_H
 #define PARSE_H
 
-#include "libft/libft.h"
+#include "../libft/libft.h"
 #include "../stack/stack.h"
 
 typedef struct s_data {
