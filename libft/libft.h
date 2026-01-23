@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 11:04:40 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/22 14:29:19 by hhamidi          ###   ########lyon.fr   */
+/*   Updated: 2026/01/23 16:21:12 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	**ft_split(char const *s, char c);
 void	ft_putstr_fd(char *s, int fd);
 long    ft_atol(const char *str);
 int	ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dest, const char *src);
 
 #endif

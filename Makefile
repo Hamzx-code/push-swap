@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/23 15:45:45 by hhamidi          ###   ########.fr        #
+#    Updated: 2026/01/23 16:21:10 by hhamidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRCS = main/main.c \
 	   libft/ft_strjoin.c \
 	   libft/ft_split.c \
 	   libft/ft_putstr_fd.c \
-	   libft/ft_strcmp.c
+	   libft/ft_strcmp.c \
+	   libft/ft_strcpy.c \
 	   parsing/parse.c \
 	   parsing/parse_utils.c \
 	   parsing/parse_flags.c \
