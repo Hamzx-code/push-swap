@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:06:22 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 02:55:52 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/23 17:05:38 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	initialize(int *mistakes, int *total_pairs, t_node **i, t_stack *a)
 	*i = a->top;
 }
 
-static double	count_disorder(t_stack *a)
+double	count_disorder(t_stack *a)
 {
 	t_node	*i;
 	t_node	*j;
