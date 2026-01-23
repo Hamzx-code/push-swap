@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 19:51:40 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/23 02:12:08 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/23 14:49:07 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,17 @@ static int	fill_stack(t_stack *stack, int *numbers, int size)
 	while (i >= 0)
 	{
 		if (!push(stack, numbers[i]))
-			return (0);
+			return (empty_stack(stack));
 		i--;
 	}
 	return (1);
+}
+
+static int	empty_stack(t_stack *stack)
+{
+	while (stack->size > 0)
+		pop(stack);
+	return (0);
 }
 
 int	parse(int ac, char **av, t_stack *stack, t_data *data)
@@ -80,6 +87,8 @@ int	parse(int ac, char **av, t_stack *stack, t_data *data)
 		free(data->numbers);
 		return (0);
 	}
+	if (is_sorted(stack) == 1)
+		return (empty_stack(stack));
 	free_buffers(values);
 	free(data->numbers);
 	return (1);
