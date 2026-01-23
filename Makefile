@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/22 01:57:37 by mkacemi          ###   ########.fr        #
+#    Updated: 2026/01/23 15:12:59 by hhamidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ SRCS = main/main.c \
 	   main/display_utils.c \
        stack/stack_utils1.c \
        stack/stack_utils2.c \
+	   parsing/parse.c \
+	   parsing/parse_utils.c \
+	   parsing/parse_flags.c \
+	   parsing/parse_numbers.c \
        operations/operations1.c \
        operations/operations2.c \
        operations/operations3.c \
@@ -36,6 +40,7 @@ OBJS = $(SRCS:.c=.o)
 
 HEADERS = main/main.h \
           stack/stack.h \
+		  parsing/parse.h \
           operations/operations.h \
           algorithms/algorithm_simple/algorithme_simple.h \
           algorithms/algorithme_medium/algorithme_medium.h \
@@ -45,7 +50,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-	@echo "$(NAME) compilé avec succès !"
+	@echo "$(NAME) compiled successfully !"
 	./$(NAME)
 
 %.o: %.c $(HEADERS)
@@ -53,11 +58,11 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	@echo "Fichiers objets supprimés"
+	@echo "Deleted object files"
 
 fclean: clean
 	rm -f $(NAME)
-	@echo "$(NAME) supprimé"
+	@echo "$(NAME) Deleted"
 
 re: fclean all
 
