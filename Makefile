@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/24 23:48:38 by mkacemi          ###   ########.fr        #
+#    Updated: 2026/01/25 00:40:14 by mkacemi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main/main_test.c \
+SRCS = main/main.c \
 	   main/display_utils.c \
+	   main/display_utils2.c \
        stack/stack_utils1.c \
        stack/stack_utils2.c \
 	   libft/ft_isdigit.c \

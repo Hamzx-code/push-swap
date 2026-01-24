@@ -6,35 +6,11 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 00:53:29 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/22 02:47:32 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/25 00:41:58 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
-
-void	ft_putchar(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-void	ft_putnbr(int nb, int fd)
-{
-	long int	n;
-
-	n = nb;
-	if (n < 0)
-	{
-		ft_putchar('-', fd);
-		n *= -1;
-	}
-	if (n >= 0 && n <= 9)
-		ft_putchar(n + '0', fd);
-	if (n > 9)
-	{
-		ft_putnbr(n / 10, fd);
-		ft_putnbr(n % 10, fd);
-	}
-}
 
 void	ft_putfloat(double nb, int precision, int fd)
 {
@@ -57,18 +33,6 @@ void	ft_putfloat(double nb, int precision, int fd)
 		decimale *= 10;
 		ft_putchar((int)decimale + '0', fd);
 		decimale -= (int)decimale;
-		i++;
-	}
-}
-
-void	ft_putstr(char *str, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(fd, &str[i], 1);
 		i++;
 	}
 }
@@ -106,7 +70,6 @@ void	display_r(t_flage *flage)
 void	display_bench(t_flage *flage)
 {
 	ft_putstr("[bench] disorder:  ", 2);
-	//ft_putnbr_double(flage->disorder * 100, 0, 2);
 	ft_putfloat(flage->disorder, 2, 2);
 	write(2, "%\n", 2);
 	ft_putstr("[bench] strategy:  ", 2);

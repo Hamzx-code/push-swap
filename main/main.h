@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 18:28:47 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/23 16:24:32 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/25 00:39:56 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@
 # include <stdio.h>
 
 void	display_bench(t_flage *flage);
+void	ft_putchar(char c, int fd);
+void	ft_putnbr(int nb, int fd);
+void	ft_putstr(char *str, int fd);
 
 #endif
