@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 19:51:40 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/23 16:33:34 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/24 12:42:46 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	free_buffers(char **tab)
 	free(tab);
 }
 
-static int validate_arguments(int ac, char **av)
+static int	validate_arguments(int ac, char **av)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ static int validate_arguments(int ac, char **av)
 
 static int	fill_stack(t_stack *stack, int *numbers, int size)
 {
-	int i;
+	int	i;
 
 	i = size - 1;
 	while (i >= 0)

@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:06:22 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/23 23:25:43 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/24 12:52:46 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ int	adaptive(t_stack *a, t_stack *b, t_flage *flage)
 	{
 		if (algorithme_simple(a, b, flage) == 0)
 			return (0);
-		copy_strategy(flage, "Simple / O(n^2)");
+		copy_strategy(flage, "Adaptive / O(n^2)");
 	}
 	else if (disorder < 0.5)
 	{
 		if (algorithme_medium(a, b, flage) == 0)
 			return (0);
-		copy_strategy(flage, "Medium / O(n √ n)");
+		copy_strategy(flage, "Adaptive / O(n √ n)");
 	}
 	else if (disorder >= 0.5)
 	{
 		if (algorithme_complexe(a, b, flage) == 0)
 			return (0);
-		copy_strategy(flage, "Complex / O(n log n)");
+		copy_strategy(flage, "Adaptive / O(n log n)");
 	}
 	return (1);
 }

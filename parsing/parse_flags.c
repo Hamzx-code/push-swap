@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 17:00:36 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/22 20:14:45 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/24 12:56:59 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static int	check_valid_flag(char *flag)
 	return (0);
 }
 
-static int	check_second_flag(int first_flag_type, char *second_flag, t_data *data)
+static int	second_flag(int first_flag_type, char *second_flag, t_data *data)
 {
 	int	second_flag_type;
 
 	second_flag_type = check_valid_flag(second_flag);
-	if (!second_flag_type || second_flag_type == first_flag_type) // valid flag and duplicate flag check
+	if (!second_flag_type || second_flag_type == first_flag_type)
 		return (0);
 	if (first_flag_type >= 1 && first_flag_type <= 4 && second_flag_type == 5)
 	{
@@ -47,14 +47,14 @@ static int	check_second_flag(int first_flag_type, char *second_flag, t_data *dat
 	return (0);
 }
 
-int	parse_flags(int values_count, char **values, int *flag_count, t_data *data)
+int	parse_flags(int value_nb, char **values, int *flag_count, t_data *data)
 {
 	int	nb_flags;
 	int	first_flag_type;
 
 	nb_flags = 0;
 	first_flag_type = 0;
-	if (values_count >= 1 && values[0][0] == '-' && values[0][1] == '-')
+	if (value_nb >= 1 && values[0][0] == '-' && values[0][1] == '-')
 	{
 		first_flag_type = check_valid_flag(values[0]);
 		if (!first_flag_type)
@@ -64,10 +64,10 @@ int	parse_flags(int values_count, char **values, int *flag_count, t_data *data)
 		else
 			data->flag = first_flag_type;
 		nb_flags++;
-	}	
-	if (values_count >= 2 && values[1][0] == '-' && values[1][1] == '-')
+	}
+	if (value_nb >= 2 && values[1][0] == '-' && values[1][1] == '-')
 	{
-		if (!check_second_flag(first_flag_type, values[1], data))
+		if (!second_flag(first_flag_type, values[1], data))
 			return (0);
 		nb_flags++;
 	}

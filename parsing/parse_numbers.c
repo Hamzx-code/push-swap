@@ -6,13 +6,12 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 17:17:19 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/22 18:22:52 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/24 12:41:25 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
 #include <limits.h>
-
 
 static int	parse_char(char *value)
 {
@@ -43,7 +42,7 @@ static int	parse_duplicate(int	*numbers, int size_array)
 {
 	int	i;
 	int	j;
-	int	size; 
+	int	size;
 
 	i = 0;
 	size = size_array;
@@ -63,7 +62,7 @@ static int	parse_duplicate(int	*numbers, int size_array)
 
 int	parse_values(char **values, int start, t_data *data)
 {
-	int	i;
+	int		i;
 	long	value_long;
 
 	i = start;

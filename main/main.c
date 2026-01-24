@@ -6,15 +6,15 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 18:52:41 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/23 23:29:38 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/24 13:02:21 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-static void sort_strategy(t_stack *stack, int flag, t_flage *flage)
+static void	sort_strategy(t_stack *stack, int flag, t_flage *flage)
 {
-	double disorder;
+	double	disorder;
 
 	disorder = 0.0;
 	if (flag == 1)
@@ -32,9 +32,9 @@ static void sort_strategy(t_stack *stack, int flag, t_flage *flage)
 int	push_swap(int ac, char **av)
 {
 	t_stack	a;
-	t_stack b;
+	t_stack	b;
 	t_data	data;
-	t_flage flage;
+	t_flage	flage;
 
 	init_stack(&a);
 	if (!parse(ac, av, &a, &data))
@@ -56,7 +56,7 @@ int	push_swap(int ac, char **av)
 	return (1);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (!push_swap(ac, av))
 		return (1);
