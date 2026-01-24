@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 02:06:22 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/24 12:52:46 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/24 13:08:27 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	copy_strategy(t_flage *flage, char *strategy)
 	int	i;
 
 	i = 0;
-	while (i < 20 && strategy[i] != '\0')
+	while (i < 25 && strategy[i] != '\0')
 	{
 		flage->strategy[i] = strategy[i];
 		i++;
