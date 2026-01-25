@@ -1,3 +1,4 @@
 *.out
 trash.c
 checker_linux
+main/main_test.c
