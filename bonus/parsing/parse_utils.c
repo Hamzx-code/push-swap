@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:12:43 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/26 19:25:07 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/26 20:33:14 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**join_and_split_args(int ac, char **av)
 	return (values);
 }
 
-static int	count_elements(char **tab)
+int	count_elements(char **tab)
 {
 	int	count;
 
