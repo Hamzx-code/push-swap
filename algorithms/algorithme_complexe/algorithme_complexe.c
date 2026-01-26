@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 18:07:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/25 16:48:16 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/26 11:37:52 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	algorithme_complexe(t_stack *a, t_stack *b, t_flage *flage)
 {
 	int		*arr;
 
+	if (is_sorted(a))
+		return (0);
 	if (a->size == 2)
 	{
 		sa(a, flage);

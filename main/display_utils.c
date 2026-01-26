@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 00:53:29 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/25 17:37:28 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/26 11:40:27 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,5 @@ void	display_bench(t_flage *flage)
 	display_sp(flage);
 	write(2, "\n", 1);
 	display_r(flage);
+	write(2, "\n", 1);
 }

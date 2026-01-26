@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 19:51:40 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/25 16:57:31 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/26 11:26:02 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	parse(int ac, char **av, t_stack *stack, t_data *data)
 	}
 	free_buffers(values);
 	free(data->numbers);
-	if (is_sorted(stack) == 1)
+	if (is_sorted(stack) == 1 && stack->size == 1)
 		return (empty_stack(stack));
 	return (1);
 }
