@@ -1,6 +1,5 @@
-# Push_swap
-
 *Ce projet a été créé dans le cadre du cursus 42 par mkacemi42 et hhamidi42.*
+# Push_swap
 
 ## Description
 
@@ -176,18 +175,6 @@ où une paire (a[i], a[j]) est inversée si i < j mais a[i] > a[j].
 **Justification du choix adaptatif :**
 L'analyse du désordre permet d'exploiter la structure partielle des données. Une pile presque triée ne nécessite pas un tri complet, tandis qu'une pile très désordonnée bénéficie d'un algorithme robuste comme le radix sort. Cette approche adaptive optimise les performances moyennes sur des entrées réelles.
 
-## Objectifs de performance
-
-### Pour 100 nombres aléatoires :
-- ✅ **< 2000 opérations** : validation minimale
-- ⭐ **< 1500 opérations** : bonne performance
-- 🏆 **< 700 opérations** : performance excellente
-
-### Pour 500 nombres aléatoires :
-- ✅ **< 12000 opérations** : validation minimale
-- ⭐ **< 8000 opérations** : bonne performance
-- 🏆 **< 5500 opérations** : performance excellente
-
 ## Opérations disponibles
 
 | Opération | Description |
@@ -289,31 +276,32 @@ Le programme affiche `Error` suivi d'un retour à la ligne sur la sortie d'erreu
 
 ## Contributions
 
-### [ton_login]
-- Implémentation des algorithmes Simple et Medium
-- Gestion du parsing et des erreurs
-- Tests et validation sur 100 nombres
+### mkacemi
+- Implémentation de toutes les opérations push_swap (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr)
+- Développement de l'algorithme Simple (Min/Max Extraction - O(n²))
+- Développement de l'algorithme Medium (Chunk-Based Sorting - O(n√n))
+- Développement de l'algorithme Complex (Radix Sort - O(n log n))
+- Implémentation de l'algorithme Adaptatif avec calcul du désordre
+- Tests et optimisation des performances
 
-### [login_partenaire]
-- Implémentation des algorithmes Complex et Adaptatif
-- Calcul de la métrique de désordre
-- Tests et validation sur 500 nombres
-- Développement du checker (bonus)
+### hhamidi
+- Gestion complète du parsing des arguments
+- Validation et gestion des erreurs (duplications, valeurs invalides, débordements)
+- Développement du programme checker (bonus)
+- Implémentation de la lecture et exécution des opérations dans le checker
+- Tests de robustesse et cas limites
+- Intégration et validation finale
 
-*Les deux membres ont collaboré sur l'architecture générale, le debugging et l'optimisation des performances.*
+*Les deux membres ont collaboré sur l'architecture générale du projet, le Makefile, le debugging et la documentation.*
 
 ## Ressources
 
-### Documentation officielle et références classiques
-- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) - Complexités algorithmiques
-- [Visualgo](https://visualgo.net/en/sorting) - Visualisation d'algorithmes de tri
-- [Sorting Algorithms Animations](https://www.toptal.com/developers/sorting-algorithms) - Comparaisons visuelles
-- [Introduction to Algorithms (CLRS)](https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/) - Référence académique
-- [GeeksforGeeks - Radix Sort](https://www.geeksforgeeks.org/radix-sort/) - Documentation du radix sort
-
-### Articles et tutoriels spécifiques
-- [Push_swap : A Journey to Find the Most Efficient Sorting Algorithm](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
-- [Complexity Analysis for Two-Stack Sorting](https://stackoverflow.com/questions/tagged/push-swap)
+### Support de pairs et collaboration
+Au cours de ce projet, nous avons sollicité l'aide et les conseils de plusieurs collègues de l'école 42 :
+- **Discussions d'approches algorithmiques** : échanges avec des pairs ayant déjà validé le projet pour comprendre les différentes stratégies possibles
+- **Revue de code** : sessions de peer-review pour identifier les bugs et optimiser les performances
+- **Debugging collaboratif** : aide mutuelle sur les cas limites et les erreurs difficiles à reproduire
+- **Partage de tests** : utilisation de jeux de tests créés par la communauté pour valider nos algorithmes
 
 ### Utilisation de l'IA
 
@@ -348,4 +336,3 @@ L'intelligence artificielle a été utilisée de manière assistive sur ce proje
 **Date de réalisation :** Janvier 2026  
 **École :** 42  
 **Langage :** C  
-**Note minimale :** 100/100 (objectif)
