@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:12:58 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/18 16:51:11 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/28 00:04:47 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,4 @@ int	pop(t_stack *s)
 	free(tmp);
 	(s->size)--;
 	return (value);
-}
-
-int	peek(t_stack *stack)
-{
-	if (!stack->top)
-		return (0);
-	return ((stack->top)->value);
 }
