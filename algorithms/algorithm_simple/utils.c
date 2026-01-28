@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:07:09 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/16 18:42:07 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/28 00:44:16 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,6 @@ int	valeur_min(t_stack *stack)
 		i++;
 	}
 	return (min);
-}
-
-int	valeur_max(t_stack	*stack)
-{
-	int		max;
-	int		i;
-	t_node	*current;
-
-	i = 1;
-	current = stack->top;
-	max = current->value;
-	while (i <= stack->size)
-	{
-		if (current->value > max)
-			max = current->value;
-		current = current->next;
-		i++;
-	}
-	return (max);
 }
 
 int	position(int value, t_stack *stack)
