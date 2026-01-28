@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:07:09 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/28 00:44:16 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/28 01:33:16 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,24 @@ int	cost(int index, int size)
 		return (size - index + 1);
 }
 
-int	valeur_min(t_stack *stack)
-{
-	int		min;
-	int		i;
-	t_node	*current;
+// int	valeur_min(t_stack *stack)
+// {
+// 	int		min;
+// 	int		i;
+// 	t_node	*current;
 
-	i = 1;
-	current = stack->top;
-	min = current->value;
-	while (i <= stack->size)
-	{
-		if (current->value < min)
-			min = current->value;
-		current = current->next;
-		i++;
-	}
-	return (min);
-}
+// 	i = 1;
+// 	current = stack->top;
+// 	min = current->value;
+// 	while (i <= stack->size)
+// 	{
+// 		if (current->value < min)
+// 			min = current->value;
+// 		current = current->next;
+// 		i++;
+// 	}
+// 	return (min);
+// }
 
 int	position(int value, t_stack *stack)
 {
@@ -54,4 +54,26 @@ int	position(int value, t_stack *stack)
 		i++;
 	}
 	return (-1);
+}
+
+int	valeur_min_pos(t_stack *stack, int *pos)
+{
+	int		min;
+	int		i;
+	t_node	*current;
+
+	i = 1;
+	current = stack->top;
+	min = current->value;
+	while (i <= stack->size)
+	{
+		if (current->value < min)
+		{
+			min = current->value;
+			*pos = i;
+		}
+		current = current->next;
+		i++;
+	}
+	return (min);
 }

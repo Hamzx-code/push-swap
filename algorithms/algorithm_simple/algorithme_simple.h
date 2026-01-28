@@ -6,7 +6,7 @@
 /*   By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 16:08:32 by mkacemi           #+#    #+#             */
-/*   Updated: 2026/01/28 00:44:22 by mkacemi          ###   ########.fr       */
+/*   Updated: 2026/01/28 01:33:21 by mkacemi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include "../../operations/operations.h"
 
 int	cost(int index, int size);
-int	valeur_min(t_stack *stack);
+//int	valeur_min(t_stack *stack);
+int	valeur_min_pos(t_stack *stack, int *pos);
 int	position(int value, t_stack *stack);
 int	algorithme_simple(t_stack *a, t_stack *b, t_flage *flage);
 
