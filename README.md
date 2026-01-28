@@ -1,4 +1,4 @@
-*Ce projet a été créé dans le cadre du cursus 42 par mkacemi42 et hhamidi42.*
+*Ce projet a été créé dans le cadre du cursus 42 par mkacemi et hhamidi.*
 # Push_swap
 
 ## Description
@@ -212,22 +212,21 @@ push_swap
 │       ├── algorithme_simple.h
 │       └── utils.c
 ├── bonus
-│   ├── checker.c
-│   ├── checker_utils.c
-│   ├── gnl
-│   │   ├── get_next_line.c
-│   │   ├── get_next_line.h
-│   │   └── get_next_line_utils.c
-│   ├── operations
-│   │   ├── operations1.c
-│   │   ├── operations2.c
-│   │   ├── operations3.c
-│   │   ├── operations4.c
-│   │   └── operations.h
-│   └── parsing
-│       ├── parse.c
-│       ├── parse_numbers.c
-│       └── parse_utils.c
+│   ├── checker.c
+│   ├── checker.h
+│   ├── checker_utils.c
+│   ├── operations_bonus
+│   │   ├── operations.h
+│   │   ├── push.c
+│   │   ├── reverse_rotate.c
+│   │   ├── rotate.c
+│   │   └── swap.c
+│   ├── parsing
+│   │   ├── parse.c
+│   │   ├── parse.h
+│   │   ├── parse_numbers.c
+│   │   └── parse_utils.c
+│   └── read.c
 ├── libft
 │   ├── ft_atol.c
 │   ├── ft_isdigit.c
