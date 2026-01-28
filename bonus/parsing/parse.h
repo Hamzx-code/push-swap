@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:26:08 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/27 21:03:17 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/28 16:07:17 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,18 @@
 # include "../../stack/stack.h"
 # include <limits.h>
 
-int		parse_checker(int ac, char **av, int **numbers, t_stack *stack);
+typedef struct s_data
+{
+	int	*numbers;
+	int	size;
+}	t_data;
+
+int		parse_checker(int ac, char **av, t_stack *stack, t_data *data);
 char	**join_and_split_args(int ac, char **av);
-int		validate_input(char **values, int **numbers, int *numbers_size);
-int		parse_values(char **values, int **numbers, int numbers_size);
+int		validate_input(char **values, t_data *data);
+int		parse_values(char **values, t_data *data);
 int		empty_stack(t_stack *stack);
 void	free_buffers(char **tab);
+void	init_data(t_data *data);
 
 #endif
-

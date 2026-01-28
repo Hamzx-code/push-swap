@@ -6,11 +6,17 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:12:43 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/27 21:46:49 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/28 13:07:32 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parse.h"
+
+void	init_data(t_data *data)
+{
+	data->numbers = NULL;
+	data->size = 0;
+}
 
 char	**join_and_split_args(int ac, char **av)
 {
@@ -48,15 +54,15 @@ static int	count_elements(char **tab)
 	return (count);
 }
 
-int	validate_input(char **values, int **numbers, int *numbers_size)
+int	validate_input(char **values, t_data *data)
 {
-	(*numbers_size) = count_elements(values);
-	*numbers = malloc((*numbers_size) * sizeof(int));
-	if (!numbers)
+	data->size = count_elements(values);
+	data->numbers = malloc(data->size * sizeof(int));
+	if (!data->numbers)
 		return (0);
-	if (!parse_values(values, numbers, *numbers_size))
+	if (!parse_values(values, data))
 	{
-		free(*numbers);
+		free(data->numbers);
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}

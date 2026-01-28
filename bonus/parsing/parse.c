@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:44:50 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/27 21:44:40 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/28 13:31:26 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,30 +65,28 @@ int	empty_stack(t_stack *stack)
 	return (0);
 }
 
-int	parse_checker(int ac, char **av, int **numbers, t_stack *stack)
+int	parse_checker(int ac, char **av, t_stack *stack, t_data *data)
 {
-	char **values;
-	int	numbers_size;
+	char	**values;
 
 	if (ac < 2 || !validate_arguments(ac, av))
 		return (0);
 	values = join_and_split_args(ac, av);
 	if (!values)
 		return (0);
-	numbers_size = 0;
-	if (!validate_input(values, numbers, &numbers_size))
+	init_data(data);
+	if (!validate_input(values, data))
 	{
 		free_buffers(values);
 		return (0);
 	}
-	if (!fill_stack(stack, *numbers, numbers_size))
+	if (!fill_stack(stack, data->numbers, data->size))
 	{
 		free_buffers(values);
-		free(*numbers);
+		free(data->numbers);
 		return (0);
 	}
 	free_buffers(values);
-	free(*numbers);
+	free(data->numbers);
 	return (1);
 }
-

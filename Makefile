@@ -6,7 +6,7 @@
 #    By: mkacemi <mkacemi@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/16 19:03:56 by mkacemi           #+#    #+#              #
-#    Updated: 2026/01/27 22:42:11 by hhamidi          ###   ########.fr        #
+#    Updated: 2026/01/28 17:23:10 by hhamidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT = libft/libft.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -Ilibft
 
 COMMON_SRCS = stack/stack_utils1.c \
 			  stack/stack_utils2.c \
@@ -69,7 +69,7 @@ HEADERS = main/main.h \
 
 BONUS_HEADERS = bonus/checker.h \
 				bonus/parsing/parse.h \
-				bonus/operations/operations.h
+				bonus/operations_bonus/operations.h
 
 all: $(NAME)
 
@@ -77,7 +77,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "$(NAME) compiled successfully !"
 
-bonus: $(BONUS_NAME)
+bonus: $(LIBFT) $(BONUS_NAME)
 
 $(BONUS_NAME): $(BONUS_OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(BONUS_OBJS) $(LIBFT) -o $(BONUS_NAME)
@@ -86,7 +86,7 @@ $(BONUS_NAME): $(BONUS_OBJS) $(LIBFT)
 %.o: %.c $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus/%.o: bonus/%.c $(BONUS_HEADERS) Makefile
+bonus/%.o: bonus/%.c $(BONUS_HEADERS) $(HEADERS) Makefile
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):

@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:13:42 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/27 21:03:00 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/28 12:58:45 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	parse_duplicate(int	*numbers, int size_array)
 	return (1);
 }
 
-int	parse_values(char **values, int **numbers, int numbers_size)
+int	parse_values(char **values, t_data *data)
 {
 	int		i;
 	long	value_long;
@@ -72,10 +72,10 @@ int	parse_values(char **values, int **numbers, int numbers_size)
 		value_long = ft_atol(values[i]);
 		if (!parse_limits(value_long))
 			return (0);
-		(*numbers)[i] = (int)value_long;
+		data->numbers[i] = (int)value_long;
 		i++;
 	}
-	if (!parse_duplicate(*numbers, numbers_size))
+	if (!parse_duplicate(data->numbers, data->size))
 		return (0);
 	return (1);
 }

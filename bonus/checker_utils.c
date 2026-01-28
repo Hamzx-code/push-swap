@@ -6,7 +6,7 @@
 /*   By: hhamidi <hhamidi@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 19:40:02 by hhamidi           #+#    #+#             */
-/*   Updated: 2026/01/27 21:11:24 by hhamidi          ###   ########.fr       */
+/*   Updated: 2026/01/28 16:07:41 by hhamidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	checker_reverse_rotate(char *operation, t_stack *a, t_stack *b)
 	if (!ft_strcmp(operation, "rrr"))
 		rrr(a, b);
 }
-#include <stdio.h>
+
 int	apply_operations(char **operations, t_stack *a, t_stack *b)
 {
 	int	i;
